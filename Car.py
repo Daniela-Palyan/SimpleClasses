@@ -8,17 +8,29 @@
 
 class Car:
     def __init__(self, brand, model = 'Unknown'):
-        self.brand = brand
-        self.model = model
+        self.__brand = brand
+        self.__model = model
+
+    def set_model(self, model):
+        self.__model = model
+
+    def set_brand(self, brand):
+        self.__brand = brand
+
+    def get_model(self):
+        return self.__model
+    
+    def get_brand(self):
+        return self.__brand
 
     def display_info(self):
-        print(self.brand, self.model)
+        print(self.get_brand(), self.get_model())
 
 # c1 = Car()
 # print(type(c1))
 
 c2 = Car('Opel', 'Astra')
-print(c2.brand, c2.model)
+print(c2.get_brand(), c2.get_model())
 
 c3 = Car('BMW')
 c3.display_info()
